@@ -1,0 +1,79 @@
+# ==============================
+# Python cache & compiled files
+# ==============================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ==============================
+# Virtual environments
+# ==============================
+.venv/
+venv/
+env/
+ENV/
+
+# ==============================
+# Dataset folders (large/raw data)
+# Keep code only in GitHub repo
+# ==============================
+basketball/
+biking/
+diving/
+golf_swing/
+horse_riding/
+soccer_juggling/
+swing/
+tennis_swing/
+trampoline_jumping/
+volleyball_spiking/
+walking/
+Trial/
+
+# ==============================
+# Model checkpoints & outputs
+# ==============================
+*.pth
+*.pt
+*.ckpt
+*.pkl
+*.pickle
+*.onnx
+
+# Training/analysis generated files
+training_metrics.json
+training_metrics.pkl
+
+# Visualizations / generated figures
+*.png
+*.jpg
+*.jpeg
+*.svg
+
+# ==============================
+# Logs & temporary files
+# ==============================
+*.log
+*.tmp
+*.temp
+
+# ==============================
+# Jupyter/IPython
+# ==============================
+.ipynb_checkpoints/
+
+# ==============================
+# IDE/editor/system files
+# ==============================
+.vscode/
+.idea/
+*.code-workspace
+.DS_Store
+Thumbs.db
+
+# ==============================
+# Environment variable files
+# ==============================
+.env
+.env.*
+!.env.example
