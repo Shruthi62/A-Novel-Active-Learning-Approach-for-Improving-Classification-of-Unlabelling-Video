@@ -1,92 +1,167 @@
-# Novel Active Learning Video Classification
+Got it 🔥 — here’s your **Active Learning Video Classification README** in the **same premium structure style** 👇
 
-This project implements a novel active learning approach for classifying unlabeled videos using deep learning techniques. It analyzes 11 action classes from the YouTube Action Dataset.
+---
 
-## Features
+# 🎥 Active Learning-Based Video Classification System
 
-- **Deep Feature Extraction**: Uses pre-trained ResNet-18 for robust video feature extraction
-- **Active Learning**: Implements uncertainty sampling (least confidence) to iteratively improve model performance
-- **Video Classification**: Classifies videos into 11 action categories
-- **Scalable Training**: Starts with small labeled dataset and grows through active learning
+## 🚀 Overview
 
-## Dataset
+The **Active Learning-Based Video Classification System** is an advanced AI project designed to efficiently classify video data while reducing the need for large labelled datasets. Traditional video classification models require extensive manual annotation, which is both time-consuming and expensive.
 
-The system works with the YouTube Action Dataset containing 11 action classes:
-- Basketball shooting
-- Biking
-- Diving
-- Golf swing
-- Horse riding
-- Soccer juggling
-- Swing
-- Tennis swing
-- Trampoline jumping
-- Volleyball spiking
-- Walking (with dog)
+This project addresses this challenge by integrating **Active Learning** with deep learning techniques to intelligently select the most informative samples from unlabelled video data. The system combines **CNN (ResNet-18)** for spatial feature extraction and **LSTM** for temporal modeling, enabling accurate understanding of actions and events in videos.
 
-## Installation
+It is highly suitable for real-world applications such as **surveillance systems, human action recognition, multimedia analysis, and smart monitoring systems**.
 
-1. Install dependencies:
+---
+
+## 🎯 Key Features
+
+* 🎥 Supports **video-based action classification**
+* 🧠 Uses **CNN (ResNet-18)** for spatial feature extraction
+* 🔁 Uses **LSTM** for temporal sequence learning
+* 🎯 **Active Learning** reduces manual labelling effort
+* 📊 **Uncertainty-based sampling** selects informative samples
+* 🖼️ **Keyframe extraction** removes redundant frames
+* ⚡ Efficient training with fewer labelled samples
+* 📈 Improved accuracy and scalability
+
+---
+
+## 🏗️ System Workflow
+
+```text
+Video Input
+      ↓
+Frame Extraction
+      ↓
+Keyframe Selection
+      ↓
+Preprocessing (Resize, Normalize)
+      ↓
+CNN (Feature Extraction)
+      ↓
+LSTM (Temporal Learning)
+      ↓
+Active Learning (Sample Selection)
+      ↓
+Model Training
+      ↓
+Prediction (Action Class)
+      ↓
+Performance Evaluation
+```
+
+---
+
+## 🧪 Tech Stack
+
+### 🔹 Backend
+
+* 🐍 Python
+* 🧠 PyTorch / TensorFlow
+* 🔍 OpenCV
+* 📊 NumPy, Matplotlib
+
+### 🔹 Concepts Used
+
+* 🤖 Convolutional Neural Networks (CNN)
+* 🔁 Long Short-Term Memory (LSTM)
+* 🎯 Active Learning
+* 📊 Clustering Techniques
+
+---
+
+## 📁 Project Structure
+
+### 🔹 Core Project
+
 ```bash
-pip install -r requirements.txt
+Active-Video-Classification/
+│
+├── dataset/                  # KTH dataset (videos & labels)
+├── models/                   # CNN, LSTM, combined model
+├── preprocessing/            # Frame extraction & keyframe selection
+├── active_learning/          # Sampling strategies
+├── outputs/                  # Results & graphs
+│
+├── train.py                  # Training script
+├── evaluate.py               # Evaluation script
+├── requirements.txt          # Dependencies
+└── README.md
 ```
 
-2. Ensure you have the dataset in the correct folder structure.
+---
 
-## Usage
+## ⚙️ How It Works
 
-### Training with Active Learning
+1. 📤 Video dataset is loaded
+2. 🎥 Videos are converted into frames
+3. 🖼️ Keyframes are selected to remove redundancy
+4. 🧹 Frames are preprocessed (resize, normalize)
+5. 🧠 CNN extracts spatial features
+6. 🔁 LSTM learns temporal dependencies
+7. 🎯 Active Learning selects informative samples
+8. 📊 Model is trained on selected data
+9. ✅ Predictions are generated and evaluated
 
-Run the main script to train the model:
-```bash
-python novel_active_learning.py
-```
+---
 
-This will:
-- Load the dataset
-- Perform active learning iterations
-- Save the best model as `best_model.pth`
+## 📊 Performance
 
-### Classifying New Videos
+* ✅ High classification accuracy with fewer labelled samples
+* ⚡ Reduced annotation cost and time
+* 📉 Lower computational overhead due to keyframe selection
+* 📈 Better efficiency compared to traditional supervised learning
 
-To classify a new video, use the `classify_video()` function:
+---
 
-```python
-from novel_active_learning import classify_video
+## ⚖️ Model Comparison
 
-# Classify a video
-predicted_action, confidence = classify_video("path/to/your/video.avi")
-```
+| Model Type                                | Data Requirement | Performance |
+| ----------------------------------------- | ---------------- | ----------- |
+| Supervised CNN                            | High             | Medium      |
+| CNN + LSTM                                | Medium           | High        |
+| ✅ Proposed (Active Learning + CNN + LSTM) | Low              | **High**    |
 
-Or run classification on an example video:
-```python
-python -c "from novel_active_learning import classify_video; classify_video('path/to/video.avi')"
-```
+---
 
-## Configuration
+## ⚠️ Limitations
 
-Modify the `Config` class in `novel_active_learning.py` to adjust:
-- Number of initial labeled samples
-- Query size per iteration
-- Number of active learning iterations
-- Training hyperparameters
+* 📉 Performance depends on sample selection quality
+* ⏳ Iterative training increases computation time
+* 🧩 Limited performance on highly complex video patterns
+* 🧠 Requires tuning of Active Learning strategies
 
-## Output
+---
 
-The classification function returns:
-- Predicted action class
-- Confidence score
-- Top 3 predictions with probabilities
+## 🔮 Future Scope
 
-## Performance
+* 🤖 Transformer-based video models (ViT, TimeSformer)
+* 🎞️ 3D CNN for better spatio-temporal learning
+* 📱 Deployment on mobile and edge devices
+* 🔄 Adaptive Active Learning strategies
+* 🌐 Real-time video classification system
 
-The active learning approach should show improving accuracy as more samples are labeled, demonstrating the efficiency of uncertainty-based sample selection over random sampling.
+---
 
-## Requirements
+## 💡 Applications
 
-- Python 3.7+
-- PyTorch 1.9+
-- OpenCV
-- NumPy
-- Scikit-learn
-- tqdm
+* 🎥 Surveillance systems
+* 🏃 Human action recognition
+* 📺 Multimedia content analysis
+* 🚗 Autonomous systems
+* 📰 Video-based event detection
+
+---
+
+## 👨‍💻 Author
+
+**Vatham Shruthi**
+B.Tech AI & ML
+
+---
+
+## ⭐ Support
+
+If you found this project useful, give it a ⭐ on GitHub!
+
